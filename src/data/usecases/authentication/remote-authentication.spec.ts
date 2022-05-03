@@ -1,6 +1,6 @@
 import { RemoteAuthentication } from './remote-authentication'
 import { HttpPostClientSpy } from '@/data/test/mock-http-client'
-import { HttpStatusCode } from '@/data/protocols/http/http-reponse'
+import { HttpStatusCode } from '@/data/protocols/http/http-response'
 import { moackAccountModel, mockAuthentication } from '@/domain/tests/mock-account'
 import { InvalidCredentialsError } from '@/domain/errors/invalid-credentials-error'
 import { faker } from '@faker-js/faker'
