@@ -8,21 +8,21 @@ import {
   Input
 } from '@/presentation/components'
 
-type StateProps = {
-  isLoading: boolean
-  errorMensage: string
-}
-
 const login: React.FC = () => {
-  const [state] = useState<StateProps>({
-    isLoading: false,
-    errorMensage: ''
+  const [state] = useState({
+    isLoading: false
+  })
+
+  const [errorState] = useState({
+    email: 'Campo obrigatório',
+    password: 'Campo obrigatório',
+    mensage: ''
   })
 
   return (
     <div className={styles.login}>
       <Header />
-      <Context.Provider value={state}>
+      <Context.Provider value={{ state, errorState }}>
         <form className={styles.form}>
           <h2>Login</h2>
           <Input type="email" name="email" placeholder="Digite seu email" />
@@ -32,7 +32,7 @@ const login: React.FC = () => {
             placeholder="Digite seu email"
           />
           <button
-            data-testid ="submit"
+            data-testid="submit"
             className={styles.submit}
             type="submit"
             disabled
